@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Covid Prediction Model</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="basic" id="wrap">
+        <header class="navbar">
+            <div id="top-header" class="top-header">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <a class="navbar-brand" href="/">
+                            <span class="top-logo hidden-xs"><img src="/sebin/f/j/apus-logo.svg"
+                                    title="American Public University System home page"
+                                    alt="American Public University System home page"></span>
+                            <span class="mobile-logo visible-xs"><img style="width:100%; height:auto;"
+                                    src="/sebin/t/c/apus-mobile-logo.svg" title="APU | AMU navigation menu"
+                                    alt="APU | AMU navigation menu"></span>
+                        </a>
+                    </div>
+                    <!-- skip navigation removed from included pages -->
+                    <!--AMU|APU Menu -->
+                    <div class="campus-login-container">
+                        <div class="campus-login">Campus Login</div>
+                        <div class="menu-utility-menu-container">
+                            <ul id="menu-utility-menu" class="menu">
+                                <li
+                                    class="symbol amu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
+                                    <!-- skip navigation removed from included pages --><a
+                                        title="American Military University (AMU) Campus Login Menu" href="#">AMU</a>
+                                    <ul class="sub-menu">
+                                        <li class="type amu menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Military University (AMU)"
+                                                href="https://www.amu.apus.edu/">American Military University</a></li>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Military University (AMU) Student Login"
+                                                href="https://login.apus.edu/padsts/login">Student Login</a></li>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Military University (AMU) Faculty Login"
+                                                href="https://www.apus.edu/faculty-connect/index.htm">Faculty Login</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li
+                                    class="symbol apu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
+                                    <!-- skip navigation removed from included pages --><a
+                                        title="American Public University (APU) Campus Login Menu" href="#">APU</a>
+                                    <ul class="sub-menu">
+                                        <li class="type apu menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Public University (APU)"
+                                                href="https://www.apu.apus.edu/">American Public University</a></li>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Public University (APU) Student Login"
+                                                href="https://login.apus.edu/padsts/login">Student Login</a></li>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                                                title="American Public University (APU) Faculty Login"
+                                                href="https://www.apus.edu/faculty-connect/index.htm">Faculty Login</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar mid-bar"></span>
+                        <span class="icon-bar bot-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="bottom-header collapse navbar-collapse" id="navbar-collapse">
+                <!-- skip navigation removed from included pages -->
+                <div class="container-fluid">
+                    <div class="navbar navbar-default">
+                        <div class="campus-login-container visible-xs">
+                            <div class="campus-login">Campus Login</div>
+                            <div class="menu-utility-menu-container">
+                                <ul id="menu-utility-menu-1" class="menu">
+                                    <li
+                                        class="symbol amu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-897 dropdown">
+                                        <a title="American Military University (AMU) Campus Login Menu" href="#">AMU</a>
+                                        <!-- skip navigation removed from included pages -->
+                                        <ul class="sub-menu">
+                                            <li class="type amu menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-516"><a title="American Military University (AMU)"
+                                                    href="https://www.amu.apus.edu/">American Military University</a>
+                                            </li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-654"><a
+                                                    title="American Military University (AMU) Student Login"
+                                                    href="https://login.apus.edu/padsts/login">Student Login</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-655"><a
+                                                    title="American Military University (AMU) Faculty Login"
+                                                    href="https://www.apus.edu/faculty-connect/">Faculty Login</a></li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="symbol apu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-898 dropdown">
+                                        <a title="American Public University (APU) Campus Login Menu" href="#">APU</a>
+                                        <!-- skip navigation removed from included pages -->
+                                        <ul class="sub-menu">
+                                            <li class="type apu menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-515"><a title="American Public University (APU)"
+                                                    href="https://www.apu.apus.edu/">American Public University</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-656"><a
+                                                    title="American Public University (APU) Student Login"
+                                                    href="https://login.apus.edu/padsts/login">Student Login</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom"
+                                                id="menu-item-657"><a
+                                                    title="American Public University (APU) Faculty Login"
+                                                    href="https://www.apus.edu/faculty-connect/">Faculty Login</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="search-form">
+                            <!-- skip navigation removed from included pages -->
+                            <div class="right clickable" id="searchPanelAPUS">
+                                <div id="searchChange" class="filterException">Filter ▾</div>
+                                <form name="new_gs" title="Search" method="GET"
+                                    action="https://www.apus.edu/search/index.htm" style="display: inline;">
+                                    <label for="st-search-input">Search terms</label><input id="st-search-input"
+                                        name="dest" maxlength="255" value="" type="text" placeholder="Search">
+
+                                    <label for="searchsubmit">Submit Search</label><input id="searchsubmit" title="Go"
+                                        value="Go" type="submit">
+                                </form>
+
+                            </div>
+
+
+                            <script>
+                                $(document.forms['new_gs']).on('submit', function (e) {
+                                    console.log(this['dest'].value);
+                                    window.location.href = 'https://apus.edu/search/index.htm#stq=' + this['dest'].value;
+                                    return false;
+                                })
+                            </script>
+                        </div>
+                        <div class="top-logo hidden-xs">
+                            <!-- <img src="/sebin/f/j/apus-logo.svg" alt="American Public University System">-->
+                        </div><!-- skip navigation removed from included pages -->
+                        <nav id="navbarcont">
+
+                            <ul class="menu">
+                                <li class="menu-item-has-children dropdown"><a href="#">About</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li><a href="/about/mission/">Mission &amp; Vision</a></li>
+                                        <li><a href="/about/history/">History</a></li>
+                                        <li><a href="/about/accreditation/">Accreditation</a></li>
+                                        <li><a href="/about/fast-facts">Fast Facts</a></li>
+                                        <li><a
+                                                href="/about/leadership/executive-leadership-senior-management">Leadership</a>
+                                        </li>
+                                        <li><a href="/about/leadership/board-of-trustees/index">&nbsp; &nbsp; Board of
+                                                Trustees</a></li>
+                                        <li><a href="/newsroom/index">Newsroom</a></li>
+                                        <li><a href="/about/employers/index">Employer Relations</a></li>
+                                        <li><a href="/about/consumer-information/index">Consumer Information</a></li>
+                                        <li><a href="/about/government-relations/">Government Relations</a></li>
+                                        <li><a href="/about/careers/index">Careers</a></li>
+                                        <li><a href="/about/contact/">Contact Us</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children dropdown"><a href="#">Academic Community</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li><a href="https://catalog.apus.edu" target="_blank">Academic Catalog</a></li>
+                                        <li><a href="/academic-community/experts">Academic Experts</a></li>
+                                        <li><a href="/academic-community/cyber-defense/index" target="_blank">Center for
+                                                Cyber Defense</a></li>
+                                        <li><a href="/academic-community/space-studies/index">Center for Space
+                                                Studies</a></li>
+                                        <li><a href="/ctl/index.htm" target="_blank">Center for Teaching &amp;
+                                                Learning</a></li>
+                                        <li><a href="/academic-community/intelhub/index">IntelHub</a></li>
+                                        <li><a href="/academic-community/journals/index">Journals</a></li>
+                                        <li><a href="/academic-community/learning-outcomes-assessment/">Learning
+                                                Outcomes Assessment</a></li>
+                                        <li><a href="/academic-community/library/">Library</a></li>
+                                        <li><a href="/academic-community/research/">Research and Creative Inquiry</a>
+                                        </li>
+                                        <li><a href="/academic-community/observatory">University Observatory</a></li>
+                                        <!-- <li><a href="/academic-community/community-colleges/">Community Colleges</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children dropdown"><a href="#">Workforce Development</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li><a href="/professional-development/academic-partnerships">Partnerships</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item-has-children dropdown"><a href="#">Blogs &amp; Social</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li><a href="/social-media-center/index">Social Media Center</a></li>
+                                        <!-- 
+            <li><a href="/latest-on-our-blogs/">Blogs</a></li>
+                  <li><a href="/social-media-center/">Social Media</a></li>
+           <li><a href="/videos/">Videos</a></li>
+ -->
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item-has-children dropdown"><a href="#">Military</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-back"><a href="#">Back</a></li>
+                                        <li><a href="//www.amu.apus.edu" target="_blank">American Military
+                                                University</a></li>
+                                        <li><a href="//www.amu.apus.edu/aboutus/military-and-veterans.html"
+                                                target="_blank">Military Benefits</a></li>
+                                        <li><a href="//www.amu.apus.edu/academic/partners/military-spouses.html"
+                                                target="_blank">Military Spouses &amp; Families</a></li>
+                                        <li><a href="//www.amu.apus.edu/rep" target="_blank">Military Outreach</a></li>
+                                        <li><a href="//www.amu.apus.edu/tuition-and-financing/paying-for-school/veterans-benefits/"
+                                                target="_blank">Veterans Benefits</a></li>
+                                        <li><a href="//www.amu.apus.edu/academic/schools/armyca.html"
+                                                target="_blank">Army Credentialing Assistance</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid" id="maincnot">
+            <div id="content" class="clearfix">
+                <div><a name="Skip"></a></div>
+                <section class="interior-banner panel-widget-style"
+                    style="margin: 0; background-image: url(/sebin/j/f/hero-careers.jpg);background-repeat: none;">
+                    <div class="container-fluid narrow">
+                        <div class="text-wrap">
+                            <h1>Careers</h1>
+                        </div>
+                    </div>
+                </section>
+                <div class="row">
+                    <main class="col-md-8">
+                        <h2>Our Employees Model Our Mission</h2>
+                        <p>American Public University System’s (APUS) mission is to provide high quality higher
+                            education with emphasis on educating the nation’s military and public service communities by
+                            offering respected, relevant, accessible and affordable, student-focused online programs
+                            that prepare them for service and leadership in a diverse, global society. All of our
+                            employees contribute to the success of this mission, and work together as a team to ensure
+                            it is promoted in our daily work and responsibilities. <a
+                                href="https://www.apus.edu/about/mission">Learn more about our Vision and Core
+                                Values</a>.</p>
+                        <p>We are rapidly growing our student base, expanding into new markets, and employing technology
+                            in exciting new ways to continue to make education a reality for people around the world.
+                            <strong>We need dynamic people from all backgrounds to allow us to live up to our mission of
+                                making education accessible to all.</strong></p>
+                        <div style="text-align:center; margin: 2em 0; padding: 1em; background-color:#f6f6f6; "><a
+                                class="btn btn-primary" target="_blank" title="Search APUS Careers"
+                                href="https://recruiting.ultipro.com/AME1070/JobBoard/711bd40f-864c-42db-8c62-3c62f2edc13f?q=&amp;o=postedDateDesc">Search
+                                the APUS Career Portal</a></div>
+                        <h2>Faculty</h2>
+                        <p>100% online, courses start monthly and are offered in 8- and 16-week formats. Faculty members
+                            connect to our virtual campus and Sakai Learning Management System remotely from their home
+                            location. Undergraduate Instructors must hold a minimum of a master's degree from a
+                            regionally accredited institution, or a master's degree with a minimum of 18 semester hours
+                            in the discipline they wish to teach. Other requirements may apply. Graduate level faculty
+                            must hold a terminal (doctoral) degree in the respective discipline.</p>
+                        <p>Learn more about our <a href="https://www.apus.edu/about/careers/faculty">Faculty
+                                Benefits</a> and review the <a title="faculty information"
+                                href="https://www.apus.edu/about/careers/faculty#faq">Frequently Asked Questions</a> for
+                            more information.</p>
+                        <h2>Staff</h2>
+                        <p>We offer full time employees a generous and flexible benefits package including: company paid
+                            education, employer matched 401K, and competitive health and insurance plans. We have office
+                            locations in Charles Town, WV,&nbsp; and Manassas, VA, but also employ many talented
+                            individuals working remotely from their home locations across the country.&nbsp;</p>
+                        <p>Learn more about our <a href="https://www.apus.edu/about/careers/staff">Staff Benefits</a>
+                            and review the <a title="faq" href="https://www.apus.edu/about/careers/staff#FAQ">Frequently
+                                Asked Questions</a> for more information.</p>
+                        <h2>Equal Employment Opportunity</h2>
+                        <p>It is the policy of American Public University System to afford equal opportunity to all
+                            qualified persons. We treat all qualified individuals equally as to their recruitment,
+                            hiring, assignments, advancements, compensation, and all other terms and conditions of
+                            employment. American Public University System does not discriminate on the basis of race,
+                            color, religion, creed, sex, age, national origin, sexual orientation, or physical, mental,
+                            or sensory disability, or any other characteristic protected by law.</p>
+                        <p>American Public University System (APUS) participates in <a target="_blank" title="E-Verify"
+                                href="https://dn9tckvz2rpxv.cloudfront.net/apus.jobs/pdf/E-Verify%20Participation%20Posters.pdf">E-Verify®&nbsp;</a>and
+                            <a target="_blank" title="Right to Work"
+                                href="https://dn9tckvz2rpxv.cloudfront.net/apus.jobs/pdf/Right%20to%20Work%20Posters.pdf">Right
+                                to Work.</a></p>
+                    </main>
+                    <div class="col-md-4">
+                        <!-- skip navigation removed from included pages -->
+                        <div class="contact-wrap">
+                            <div class="contact">
+                                <h4>Contact Us</h4>
+                                <h3 class="contact-title" style="display: none;">Contact Us</h3>
+                                <div class="person"><img src="/sebin/x/s/female-avatar.png" alt="Accreditation Avatar"
+                                        class="avatar">
+                                    <p class="name">Faculty Recruitment</p>
+                                </div>
+                                <div class="info">
+                                    <div class="number ico ico-phone">877-468-6268 ext. 5469</div>
+                                    <div class="number ico ico-mail"><a
+                                            href="mailto:facultyhiring@apus.edu">facultyhiring@apus.edu</a></div>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <div class="person"><img src="/sebin/x/s/female-avatar.png" alt="Accreditation Avatar"
+                                        class="avatar">
+                                    <p class="name">Staff Recruitment</p>
+                                </div>
+                                <div class="info">
+                                    <div class="number ico ico-phone">304-724-0916</div>
+                                    <div class="number ico ico-phone"><a
+                                            href="mailto:recruiting@apus.edu">recruiting@apus.edu</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                        <h4>Connect</h4>
+                        <ul class="menu" id="careers-social">
+                            <li><a id="facebook" href="https://www.facebook.com/apusuniversity">Facebook</a></li>
+                            <li><a id="twitter" href="https://twitter.com/APUSrecruiting">Twitter</a></li>
+                            <li><a id="linkedin"
+                                    href="http://www.linkedin.com/company/american-public-university-system/careers">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
