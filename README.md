@@ -1,4 +1,4 @@
-# Final Project: COVID-19_Model
+# COVID-19_Model
 Utilizing machine learning, and a full stack application, visualize and predict COVID-19 data future outbreaks.
 
 Title:  Covid-19 Future Predictor
