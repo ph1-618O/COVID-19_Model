@@ -5,17 +5,129 @@
     <meta charset="UTF-8">
     <title>Covid Prediction Model</title>
 
+    <!-- bootstrap link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <!-- leaflet css link-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- css link -->
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <div></div>
+    <!-- Header/Jumbotron -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron text center">
+                <h1>COVID 19 Predictive Outbreak Model</h1>
+            </div>
+        </div>
+    </div>
 
-    <!--div id for the "covid"  -->
-        <div id="covid_map"></div>
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"> COVID 19 Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- End Navigation Bar -->
 
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-8">
+                <h2>COVID Prediction</h2>
+
+                <!--div id for the "covid"  -->
+                <div id="covid_map"></div>
+
+                <!-- Beginning of Right Profile Pannel -->
+                <div class="col-4">
+                    <h4>Developers Profile</h4>
+                    <ul class="profiles">
+                        <li class="Jen">
+                            <h5>Jenn S</h5>
+                            <img src="../static/images/smiley_face.jpg" alt="Jenn S" width="250" height="250">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Leo in vitae turpis massa sed elementum. Urna nec
+                                tincidunt
+                                praesent semper. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt
+                                vitae.
+                                Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.</p>
+                        </li>
+                        <li class="David">
+                            <h5>Temitayo "David" Olanbiwonnu</h5>
+                            <img src="../static/images/smiley_face.jpg" alt="Temitayo David Olanbiwonnu" width="250"
+                                height="250">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
+                                sagittis.
+                                Lobortis scelerisque fermentum dui faucibus in ornare quam. Et tortor at risus viverra
+                                adipiscing at in. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus.</p>
+                        </li>
+                        <li class="Cynthia">
+                            <h5>Cynthia Zang</h5>
+                            <img src="../static/images/smiley_face.jpg" alt="Cynthia Zang" width="250" height="250">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
+                                sagittis.
+                                Lobortis scelerisque fermentum dui faucibus in ornare quam. Et tortor at risus viverra
+                                adipiscing at in. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus.</p>
+                        </li>
+                        <li class="Kent">
+                            <h5>Kent L. Thomas</h5>
+                            <img src="../static/images/smiley_face.jpg" alt="Kent L. Thomas" width="250" height="250">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
+                                sagittis.
+                                Lobortis scelerisque fermentum dui faucibus in ornare quam. Et tortor at risus viverra
+                                adipiscing at in. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- Leaflet Script -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- D3 JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+    <!-- API key -->
+    <script type="text/javascript" src="../static/js/config.js"></script>
+
+    <!-- Our JavaScript -->
+    <script type="text/javascript" src="../static/js/logic.js"></script>
 </body>
+
 </html>
