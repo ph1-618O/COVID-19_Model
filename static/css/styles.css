@@ -1,0 +1,37 @@
+body {
+    background-color: navy;
+    opacity: 1;
+}
+
+p{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px; 
+   }
+
+.article_and_data{
+    background-color: whitesmoke;
+    opacity: 1;
+}
+
+.profiles{
+    background-color: whitesmoke;
+    opacity: 1;
+} 
+
+footer{
+    background-color:whitesmoke; 
+    border-top-style: solid; 
+    border-top-width: 5px; 
+    border-top-color:navy;
+    color: black; 
+    min-height: 55px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px; 
+    text-align: center; 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 15px; 
+    }
