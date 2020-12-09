@@ -14,10 +14,15 @@ p{
     opacity: 1;
 }
 
+.linkedin{
+    padding-right: 50px;
+}
+
 .profiles{
     background-color: whitesmoke;
     opacity: 1;
 } 
+
 
 footer{
     background-color:whitesmoke; 
