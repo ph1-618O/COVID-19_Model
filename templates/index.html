@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+
     <!-- Navigation Bar -->
     <div class="container">
         <div class="container-fluid">
@@ -47,7 +48,7 @@
                             <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Data</a>
+                            <a class="nav-link" href="https://github.com/nytimes/covid-19-data">Data</a>
                         </li>
                     </ul>
                 </div>
@@ -61,7 +62,50 @@
         <div class="row">
             <div class="col-8">
                 <div class="article_and_data">
-                    <h2>COVID Prediction</h2>
+                    <h2>COVID Prediction Models</h2>
+
+                    <br>
+
+                    <!-- Covid Map Section -->
+                    <h3>Future prediction of Covid Outbreaks in America</h3>
+                    <!-- div id for the clorapleth "covid map" -->
+                    <div id="covid_map"></div>
+                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                        est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
+                        debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
+                        non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+                        voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                    <!-- End of Covid Map Section -->
+
+                    <br>
+
+                    <!-- Section for Bar Graph -->
+                    <h3>Growth of COVID-19 in America</h3>
+                    <!-- line graph -->
+                    <div id="covid_bar_graph"></div>
+                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                        velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+                        pariatur?</p>
+                    <!-- End of Line Graph Section -->
+
+                    <br>
+
+                    <!-- Linear Regression section -->
+                    <h3>Future Growth of Covid-19 in America per State</h3>
+                    <!-- linear regression plot -->
+                    <div id="covid_linear_regression_plot"></div>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
+                        dolorum fuga. </p>
+                    <!-- End of Linear Regression Section -->
+
+                    <br>
+
+                    <!-- Beginning of David's article about Covid-19's effect on Mental Health -->
+                    <h3> Covid-19's effect on American Mental Health</h3>
                     <p>These predictions do not describe saner climes. <a id="mental_health_america" class="link"
                             href="https://mhanational.org/issues/state-mental-health-america#Key"> Mental Health
                             America
@@ -71,14 +115,9 @@
                         2020. Amongst those screened are co-workers and friends who display big grins at any
                         instance to
                         hide hidden battles.</p>
-
                     <p>According to the Center for Disease Control and Prevention(CDC), organizations want to keep
                         the
                         mental health of their workforce in check for;</p>
-
-                    <!-- div id for the clorapleth "covid map" -->
-                    <div id="covid_map"></div>
-
                     <ul>
                         <li>Increased Job Performance</li>
                         <li>Effective Communication Amongst Employees</li>
@@ -103,8 +142,6 @@
                         ubiquitous nature of viruses and the unprecedented nature of the pandemic. Another challenge
                         will be the disparity of occurrence amongst certain demographics.</p>
 
-                    <!-- line graph -->
-                    <div id="covid_bar_graph"></div>
 
                     <p>Utilizing the April 23 - July 21 Mental Health Data from the CDC with indicators such as
                         anxiety
@@ -143,8 +180,6 @@
                         prosperity? Would it be wise for employees to entrust their organizations with the task to
                         provide happiness?</p>
 
-                    <!-- linear regression plot -->
-                    <div id="covid_linear_regression_plot"></div>
 
                     <p>In this era of customer centrism, organizations seem to prioritize customer/client welfare
                         before
@@ -165,14 +200,6 @@
                         "Followers want to be taken care of. Leaders want to take care of others. Be the leader you
                         wish
                         you had." Take initiative!</p>
-
-
-
-
-
-
-
-
                 </div>
             </div>
             <!-- Right Content Profile Pannel -->
@@ -180,13 +207,12 @@
                 <ul class="profiles">
                     <h4>Developers Profile</h4>
                     <li class="Jen">
-                        <h5>Jenn S</h5>
                         <img src="../static/images/jen_s.jpeg" alt="Jenn S" width="250" height="250">
                         <br>
-                        <a href="https://www.linkedin.com/in/jenseidl/" class="linkedin"><img style= "float : right"
-                                src="../static/images/linkedin-logo.png" alt="Jenn Linkin" width="25" height="25"></a>
-                        <br>
-                        <p>Within my profile is over ten years of multidisciplinary management and team collaboration
+                        <a href="https://www.linkedin.com/in/jenseidl/" class="linkedin"><img style="float : right"
+                            src="../static/images/linkedin-logo.png" alt="Jenn Linkin" width="25" height="25"></a>
+                            <br>
+                            <p><h5>Jenn S</h5>Within my profile is over ten years of multidisciplinary management and team collaboration
                             experience. A jack of all trades, I was responsible for delivering complex marketing
                             information to diverse audiences in data visualizations, print, and social media. Upon every
                             opportunity, I seek to: serve both my team and their customer, to empower them with the
@@ -194,14 +220,14 @@
                         </p>
                     </li>
                     <br>
-                    <li class="David">
-                        <h5>Temitayo "David" Olanbiwonnu</h5>
+                    <li class="David">   
                         <img src="../static/images/image.png" alt="Temitayo David Olanbiwonnu" width="250" height="250">
                         <br>
-                        <a href="https://www.linkedin.com/in/david-olanbiwonnu1692/" class="linkedin"><img style = "float:right"
-                            src="../static/images/linkedin-logo.png" alt="David Linkin" width="25" height="25"></a>
+                        <a href="https://www.linkedin.com/in/david-olanbiwonnu1692/" class="linkedin"><img
+                                style="float:right" src="../static/images/linkedin-logo.png" alt="David Linkin"
+                                width="25" height="25"></a>
                         <br>
-                        <p>Temitayo David Olanbiwonnu is a recent MBA graduate and current past Student President of
+                        <p><h5>Temitayo "David" Olanbiwonnu</h5>Temitayo David Olanbiwonnu is a recent MBA graduate and current past Student President of
                             the Fairfax University of America. In his young professional journey, David has worked in
                             sectors ranging from the muddy waters of entrepreneurship, higher education,
                             pharmaceuticals,
@@ -215,14 +241,14 @@
                             enthusiast and enjoys networking</p>
                     </li>
                     <br>
-                    <li class="Kent">
-                        <h5>Kent L. Thomas</h5>
+                    <li class="Kent"> 
                         <img src="../static/images/kent_t.jpeg" alt="Kent L. Thomas" width="250" height="250">
                         <br>
-                        <a href="https://www.linkedin.com/in/kent-thomas-msed-84922b18a/" class="linkedin"><img style = "float:right"
-                            src="../static/images/linkedin-logo.png" alt="Kent Linkin" width="25" height="25"></a>
+                        <a href="https://www.linkedin.com/in/kent-thomas-msed-84922b18a/" class="linkedin"><img
+                                style="float:right" src="../static/images/linkedin-logo.png" alt="Kent Linkin"
+                                width="25" height="25"></a>
                         <br>
-                        <p>Kent Thomas is recently recieved his MSED in Educational Leadership from Shenandoah
+                        <p><h5>Kent L. Thomas</h5>Kent Thomas is recently recieved his MSED in Educational Leadership from Shenandoah
                             University. In his quest as a life long learner, he set forth to cultivate his technical
                             skills in Data Science at George Washington University to position himself to tackle new
                             frontiers in our 21st century digital landscape. He has developed a passion for data driven
@@ -237,9 +263,8 @@
                     </li>
                     <br>
                     <li class="Cynthia">
-                        <h5>Cynthia Zang</h5>
                         <img src="../static/images/cynthia_z.png" alt="Cynthia Zang" width="250" height="250">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        <p><h5>Cynthia Zang</h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                             ut
                             labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
                             sagittis.

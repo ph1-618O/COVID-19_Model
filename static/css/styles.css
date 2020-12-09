@@ -14,9 +14,13 @@ p{
     opacity: 1;
 }
 
-.linkedin{
-    padding-right: 50px;
+ul{
+    list-style-type: none;
 }
+
+/* .linkedin{
+    padding-right: 50px;
+} */
 
 .profiles{
     background-color: whitesmoke;
