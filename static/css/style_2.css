@@ -1,0 +1,431 @@
+.iframeContainer {
+    padding: 20px;
+    /* border: 1px solid #e3e3e3; */
+}
+
+/* * { border: 1px solid white; } */
+* {
+    border-radius: 15px;
+}
+
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+html {
+    position: relative;
+    min-height: 100%;
+    /* background: url('..images/empty_street.jpg') no-repeat center fixed;     
+    background-size: cover; */
+}
+
+
+body {
+    padding-bottom: 80px;
+    margin: 0;
+    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background: url('../images/empty_street.jpg') no-repeat center fixed;
+    background-size: cover;
+    border-radius: 6px !important;
+    /* background-image: url("../images/background.jpg"); */
+    /* background-color: #cccccc; */
+}
+
+p {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+#article_and_data {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 70%; */
+    color: white;
+}
+/* 
+.graph {
+    border-radius: 10%;
+    box-shadow:
+        0 2.8px 2.2px rgba(255, 255, 255, 0.034),
+        0 6.7px 5.3px rgba(255, 255, 255, 0.048),
+        0 12.5px 10px rgba(255, 255, 255, 0.06),
+        0 22.3px 17.9px rgba(255, 255, 255, 0.072),
+        0 41.8px 33.4px rgba(255, 255, 255, 0.086),
+        0 100px 80px rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+} */
+
+img {
+    border-radius: 10%;
+    box-shadow:
+        /* 2px 2px 2px 0px rgb(255, 255, 255); */
+        0 2.8px 2.2px rgba(255, 255, 255, 0.034),
+        0 6.7px 5.3px rgba(255, 255, 255, 0.048),
+        0 12.5px 10px rgba(255, 255, 255, 0.06),
+        0 22.3px 17.9px rgba(255, 255, 255, 0.072),
+        0 41.8px 33.4px rgba(255, 255, 255, 0.086),
+        0 100px 80px rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+}
+
+#pleth{
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: 325px;
+    /* width: 40%; */
+}
+
+
+
+
+
+
+
+
+li {
+    list-style-type: none;
+}
+
+/* .linkedin{
+    padding-right: 50px;
+} */
+
+.ontop {
+    position: relative;
+    top: 50em;
+}
+
+#team {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 70%; */
+    color: white;
+}
+
+
+footer {
+    background-color: black;
+    border-top-style: solid;
+    border-top-width: 0.5px;
+    border-top-color: silver;
+    color: white;
+    min-height: 55px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 15px;
+    opacity: 70%;
+}
+
+
+/* 
+.dashboard {
+    padding-top: 80px;
+    background: white;
+    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+} */
+
+.navbar-nav {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.navbar-nav>li {
+    float: right;
+    display: table-cell;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .navbar-nav {
+        width: 1170px;
+    }
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.p {
+    font-size: 10px;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 10px;
+}
+
+
+:root {
+    --grid-gap: 15px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#D-col-1a {
+    opacity: 90%;
+}
+
+
+/* Text formatting */
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+#e-col-1 {
+    padding-top: 30px;
+    /* padding-left:30px; */
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+#row-1 {
+    background: url('../images/empty_street.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+#col-1B {
+    border-style: rounded;
+    border-width: none;
+}
+
+
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.dashboard .chart-wrapper {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.dashboard .chart-wrapper .chart-title {
+    border-bottom: 1px solid #d7d7d7;
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 7px 10px 4px;
+}
+
+.dashboard .chart-wrapper .chart-stage {
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.dashboard .chart-wrapper .chart-notes {
+    background: #fbfbfb;
+    border-top: 1px solid #e2e2e2;
+    color: #808080;
+    font-size: 12px;
+    padding: 8px 10px 5px;
+}
+
+.chart-container {
+    display: flex;
+}
+
+.chart-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+@media (min-width: 768px) {
+    .dashboard .chart-wrapper .navbar-nav {
+        margin-bottom: 0;
+    }
+}
+
+/* grid layout */
+.grid {
+    display: grid;
+    grid-auto-flow: row;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-gap: var(--grid-gap);
+    }
+
+    .grid-hero-thirds {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-hero-thirds .grid-hero {
+        display: grid;
+        grid-gap: var(--grid-gap);
+        grid-column: 1 / -1;
+        grid-template-columns: [col-start] 2fr 1fr;
+        grid-auto-flow: column;
+    }
+
+    .grid-hero-thirds .grid-hero .hero {
+        order: 1;
+        grid-column: col-start / span 1;
+    }
+
+    .grid-thirds,
+    .grid-quarter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-split-centered {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-split-centered .grid-split {
+        display: grid;
+        grid-gap: var(--grid-gap);
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .grid-split-centered .grid-split-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .grid-split-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-split-columns .grid-split {
+        display: grid;
+        grid-gap: var(--grid-gap);
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-split-rows {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .grid-hero-sidebar {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .grid-hero-sidebar .sidebar {
+        grid-column: 1 / span 1;
+        grid-row: 1 / -1;
+    }
+
+    .grid-hero-sidebar .hero {
+        grid-column: 2 / -1;
+        grid-row: 1 / span 1;
+    }
+
+    .grid-two-and-one {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-two-and-one .two {
+        grid-column: 1 / -1;
+    }
+
+    .grid-simple-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-simple-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-column-vertical {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .grid-column-vertical .column {
+        min-width: 0;
+    }
+
+    .grid-column-vertical .vertical {
+        grid-column: 2 / -1;
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    .grid-hero-thirds,
+    .grid-hero-thirds .grid-hero {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-hero-thirds .grid-hero .hero {
+        grid-column: 1 / 3;
+    }
+
+    .grid-thirds {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-quarter {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-split-columns {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
