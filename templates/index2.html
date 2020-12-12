@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Covid Prediction Model</title>
+
+    <!-- bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- leaflet css link-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- For table-->
+
+
+    <!-- css link -->
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Header/Jumbotron -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 jumbotron text Center">
+                <div class="col-lg-3">
+                    <img src="../static/images/Covid-19_cell.jpeg" alt="Covid-19" width="100" height="100">
+                </div>
+                <div class="col-9">
+                    <h3>COVID 19 Predictive Outbreak Model</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="container">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"> COVID 19 Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/nytimes/covid-19-data">Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </br>
+    <!-- End Navigation Bar -->
+    <div class="container">
+        <!-- Left Content Pannel -->
+        <div class="row">
+            <div class="col-8">
+                <div class="article_and_data">
+                    <h2>COVID Prediction Models</h2>
+
+                    <br>
+
+                    <!-- Covid Map Section -->
+                    <h3>Future prediction of Covid Outbreaks in America</h3>
+                    <!-- div id for the clorapleth "covid map" -->
+                    <div id="covid_map"></div>
+                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                        est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
+                        debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
+                        non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+                        voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                    <!-- End of Covid Map Section -->
+
+                    <br>
+
+                    <!-- Section for Bar Graph -->
+                    <h3>Growth of COVID-19 in America</h3>
+                    <!-- line graph -->
+                    <div id="covid_bar_graph"></div>
+                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
+                        velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+                        pariatur?</p>
+                    <!-- End of Line Graph Section -->
+
+                    <br>
+
+                    <!-- Linear Regression section -->
+                    <h3>Future Growth of Covid-19 in America per State</h3>
+                    <!-- linear regression plot -->
+                    <div id="covid_linear_regression_plot"></div>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
+                        dolorum fuga. </p>
+                    <!-- End of Linear Regression Section -->
+
+                    <br>
+
+                    <!-- Beginning of David's article about Covid-19's effect on Mental Health -->
+                    <div id="covid_bubble"></div>
+                    <h3> Covid-19's effect on American Mental Health</h3>
+                    <p>These predictions do not describe saner climes. <a id="mental_health_america" class="link"
+                            href="https://mhanational.org/issues/state-mental-health-america#Key"> Mental Health
+                            America
+                        </a> (MHA) posts 1.5 million
+                        individuals have participated in the mental health screening between January 2020 to
+                        September
+                        2020. Amongst those screened are co-workers and friends who display big grins at any
+                        instance to
+                        hide hidden battles.</p>
+                    <p>According to the Center for Disease Control and Prevention(CDC), organizations want to keep
+                        the
+                        mental health of their workforce in check for;</p>
+                    <ul>
+                        <li>Increased Job Performance</li>
+                        <li>Effective Communication Amongst Employees</li>
+                        <li>Improved Physical and Daily Functioning</li>
+                        <li>Engagement and Commitment to Work.</li>
+                    </ul>
+                    <p>Gingerly analyzing the role of organizations in regard to the mental health of their
+                        workforce; I
+                        ponder to what extent organizations can be held accountable for the mental health of their
+                        employees.</p>
+                    <p>As humans, we despise anything that deteriorates the state of our well-being thereby
+                        affecting
+                        our mental health. Well-being differs amongst individuals and it ranges from health to
+                        happiness, prosperity, and welfare.</p>
+                    <p>The pandemic is a disruptive agent in the lives of basically every inhabitant on this planet.
+                        Lives and jobs were lost, economies boomeranged, it struck leaving almost no positivity to
+                        talk
+                        about except for the capitalistic powerhouses. These are strong attributes to the surge of
+                        mental issues as reported by MHA, but will the demise of the pandemic cause an improvement
+                        in
+                        the well-being of the populace? Forecasting such a report will be a tedious one due to the
+                        ubiquitous nature of viruses and the unprecedented nature of the pandemic. Another challenge
+                        will be the disparity of occurrence amongst certain demographics.</p>
+
+
+                    <p>Utilizing the April 23 - July 21 Mental Health Data from the CDC with indicators such as
+                        anxiety
+                        and depression, the trajectory of mental illness during the pandemic was analyzed below:</p>
+                    <div id='line_chart'></div>
+                    <img src="../static/images/Picture1.png" alt="Covid_mental_health_line_chart" width="500"
+                        height="250">
+                    <p>The significant dips at certain periods in May and June show there might be a strong
+                        correlation
+                        between pandemic and mental health. The disbursal of the stimulus check to almost every
+                        household in the United States, the proposal of hydroxyl chloroquine, and the relief of a
+                        change
+                        of work pattern amongst others are factors that can be attributed to this dip.</p>
+                    <p>The dip will only last for a short time though because the government will not empty its
+                        treasury
+                        to continuously give palliatives to the populace. Sooner or later, people will also have to
+                        go
+                        back to their work routine thereby providing short-term solutions.</p>
+                    <p>Things may have opened back up and wearing a face-covering might have become the new norm,
+                        but
+                        there is still an unprecedented growing number of cases that suggests a likely increase in
+                        mental issues. The University of California at Berkeley also <a id="uc_berkely" class="link"
+                            href="https://escholarship.org/uc/item/80k5d5hw"> report </a> a mental health issues
+                        have
+                        soared amongst US graduates. These are potential candidates that organizations look forward
+                        to
+                        integrating into the workforce. The question then is what role can organizations play in the
+                        mental health and wellbeing of their employees as we move forward during this pandemic and
+                        after?</p>
+                    <p>Organizations may attempt to tackle this problem through the provision of above-median earned
+                        salaries, offering a good working environment, retirement, and other benefits. However, all
+                        these do not guarantee strong mental health. In cases where an employee suffers from anxiety
+                        or
+                        depression that stem from activities beyond the workplace, how do organizations handle this?
+                        Are
+                        organizations supposed to also teach financial literacy which in the long run leads to
+                        prosperity? Would it be wise for employees to entrust their organizations with the task to
+                        provide happiness?</p>
+
+
+                    <p>In this era of customer centrism, organizations seem to prioritize customer/client welfare
+                        before
+                        its employees, understandably so. However, the current climate has highlighted the need for
+                        synergy in both consumer satisfaction and employee wellness. Combating the effect of mental
+                        health in the workforce will vary by organization sizes but organizations that are ignorant
+                        or
+                        defiant to the mental health of its workforce would be doing so to their detriment. Some
+                        organizations have become more innovative and are introducing mental health programs to
+                        enable
+                        employees to become more adaptable. Methodologies and cultures that can foster interpersonal
+                        relationships beyond work amongst employees should be encouraged, zero-tolerance against
+                        narcissism and bullying, and open room policies where employees can voice their concerns
+                        should
+                        be readily available. Ultimately, my suggestion is that employees should prioritize their
+                        well-being and not be afraid to ask for help when needed. As Simon Sinek so eloquently put
+                        it
+                        "Followers want to be taken care of. Leaders want to take care of others. Be the leader you
+                        wish
+                        you had." Take initiative!</p>
+                </div>
+            </div>
+            <!-- Right Content Profile Pannel -->
+            <div class="col-4">
+                <ul class="profiles">
+                    <h4>Developers Profile</h4>
+                        <div id='team'>
+                            <img src="../static/images/jen_s.jpeg" alt="Jenn S" width="150" height="150">
+                        </div>
+                        <br>
+                        <a href="https://www.linkedin.com/in/jenseidl/" class="linkedin"><img style="float : right"
+                                src="../static/images/linkedin-logo.png" alt="Jenn Linkin" width="25" height="25"></a>
+                        <br>
+                        <p>
+                            <h5>Jenn S</h5>Within my profile is over ten years of multidisciplinary management and team
+                            collaboration
+                            experience. A jack of all trades, I was responsible for delivering complex marketing
+                            information to diverse audiences in data visualizations, print, and social media. Upon every
+                            opportunity, I seek to: serve both my team and their customer, to empower them with the
+                            agency of knowledge about our product, and to grow sales, services, and my capabilities.
+                        </p>
+                    <br>
+                    <li class="David">
+                        <div id="team">
+                            <img src="../static/images/image.png" alt="Temitayo David Olanbiwonnu" width="150"
+                                height="150">
+                        </div>
+                        <br>
+                        <a href="https://www.linkedin.com/in/david-olanbiwonnu1692/" class="linkedin"><img
+                                style="float:right" src="../static/images/linkedin-logo.png" alt="David Linkin"
+                                width="25" height="25"></a>
+                        <br>
+                        <p>
+                            <h5>Temitayo "David" Olanbiwonnu</h5>Temitayo David Olanbiwonnu is a recent MBA graduate and
+                            current past Student President of
+                            the Fairfax University of America. In his young professional journey, David has worked in
+                            sectors ranging from the muddy waters of entrepreneurship, higher education,
+                            pharmaceuticals,
+                            and local government. He is currently enrolled in a Data Science course at
+                            George Washington University in order to gain technical skills in coding, data
+                            warehousing, and machine learning. He plans on combining these cutting-edge skills with his
+                            diverse
+                            professional experience and business acumen to achieve his long-term goal of becoming a
+                            successful business executive and global leader. As such, he aims to improve the value
+                            of education in West Africa through a non-profit organization. David is a huge soccer
+                            enthusiast and enjoys networking
+                        </p>
+                    </li>
+                    <br>
+                    <li class="Kent">
+                        <div id='team'>
+                            <img src="../static/images/kent_t.jpeg" alt="Kent L. Thomas" width="150" height="150">
+                        </div>
+                        <br>
+                        <a href="https://www.linkedin.com/in/kent-thomas-msed-84922b18a/" class="linkedin"><img
+                                style="float:right" src="../static/images/linkedin-logo.png" alt="Kent Linkin"
+                                width="25" height="25"></a>
+                        <br>
+                        <p>
+                            <h5>Kent L. Thomas</h5>Kent Thomas is recently recieved his MSED in Educational Leadership
+                            from Shenandoah
+                            University. In his quest as a life long learner, he set forth to cultivate his technical
+                            skills in Data Science at George Washington University to position himself to tackle new
+                            frontiers in our 21st century digital landscape. He has developed a passion for data driven
+                            solutions to help organizations make the best better through coding, data engineering, web
+                            design,
+                            and machine learning. Kent plans to leverage his social science and leadership experience,
+                            with
+                            his enthusiasim for data driven solutions to work with educational organizations and NGO's
+                            to bring future prosperity to developing communitties. Kent enjoys volunteering to improve
+                            rural America, and teaching and learning from others through thought provoking conversation.
+                        </p>
+                    </li>
+                    <br>
+                    <li class="Cynthia">
+                        <div id='team'>
+                        <img src="../static/images/cynthia_z.png" alt="Cynthia Zang" width='150' height="150">
+                        </div>
+                        <p>
+                            <h5>Cynthia Zang</h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
+                            sagittis.
+                            Lobortis scelerisque fermentum dui faucibus in ornare quam. Et tortor at risus viverra
+                            adipiscing at in. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class=“footer”>Copyright &copy;Analysis of Mental Health Data from the CDC was carried out at the
+            George
+            Washington Data Analytics Bootcamp by Olanbiwonnu Temitayo David, Cynthia Zhang, Jennifer S, & Kent L.
+            Thomas</div>
+    </footer>
+
+
+    <!-- Leaflet Script -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- D3 JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+    <!-- Choropleth JavaScript  
+    <script type="text/javascript" src="../static/js/choropleth.js"></script>
+
+    <!-- API key 
+    <script type="text/javascript" src="../static/js/config.js"></script>-->
+
+    Our JavaScript
+    <script type="text/javascript" src="../static/js/logic.js"></script>
+</body>
+
+
+</html>
