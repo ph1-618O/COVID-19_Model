@@ -21,7 +21,6 @@ body {
     padding-bottom: 80px;
     margin: 0;
     font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
     line-height: 1.42857143;
     background: url('../images/empty_street.jpg') no-repeat center fixed;
     background-size: cover;
@@ -38,9 +37,9 @@ p {
 
 #article_and_data {
     padding-top: 40px;
-    padding-right: 40px;
+    padding-right: 150px;
     padding-bottom: 20px;
-    padding-left: 40px;
+    padding-left: 125px;
     background-color: rgba(0, 0, 0, 0.5);
     /* opacity: 70%; */
     color: white;
@@ -74,18 +73,21 @@ img {
 #pleth{
     height: 200px;
     width: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: 325px;
+    /* display: block;
+    margin-left: 450px;
+    margin-right: 700px;
+    margin-top: 100px;
+    margin-bottom: 100px; */
     /* width: 40%; */
 }
 
-
-
-
-
-
-
+#leftshiftblock{
+    display: block;
+    margin-left:0;
+    margin-right:700px;
+    height: 200px;
+    width: 200px;
+}
 
 li {
     list-style-type: none;
@@ -101,6 +103,7 @@ li {
 }
 
 #team {
+    font-size: 14px;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 40px;
@@ -111,7 +114,7 @@ li {
 }
 
 
-footer {
+#footer {
     background-color: black;
     border-top-style: solid;
     border-top-width: 0.5px;
@@ -119,24 +122,25 @@ footer {
     color: white;
     min-height: 55px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     padding-top: 15px;
-    opacity: 70%;
+    /* opacity: 100%; */
+    /* position: absolute; */
+    /* bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here
+    height: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: black;
+    color: white; */
 }
 
-
-/* 
-.dashboard {
-    padding-top: 80px;
-    background: white;
-    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
-} */
 
 .navbar-nav {
     display: table;
@@ -162,18 +166,7 @@ footer {
     }
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 10px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    text-align: center;
-    background-color: black;
-    color: white;
-}
+
 
 .p {
     font-size: 10px;
@@ -205,7 +198,7 @@ footer {
 }
 
 #D-col-1a {
-    opacity: 90%;
+    opacity: 95%;
 }
 
 

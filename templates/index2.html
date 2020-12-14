@@ -1,334 +1,716 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Covid Prediction Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 MODEL</title>
+    <!-- Add favicon -->
+    <!-- <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16"> -->
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/77278eccd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- bootstrap link-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- leaflet css link-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />
+
+    <link rel="stylesheet" href="../static/css/style_2.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/d3style.css" type="text/css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- For table-->
-
-
-    <!-- css link -->
-    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 </head>
 
 <body>
-    <!-- Header/Jumbotron -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 jumbotron text Center">
-                <div class="col-lg-3">
-                    <img src="../static/images/Covid-19_cell.jpeg" alt="Covid-19" width="100" height="100">
+    <!--<div id="scaleable-wrapper" class='scaleable-wrapper'>-->
+    <div id="wrapper" class='wrapper'>
+        <div class="container-fluid full-width div border border-secondary">
+            <!-- <div class="container full-width div"> -->
+            <div class="jumbotron rounded mb-0" style="background:transparent !important">
+
+                <!--<div class="container full-width div"><!--</div>fluid d-flex h100 flex-column">-->
+                <div id="row-1" class="row">
+                    <!--right side begin-->
+                    <div id="col-1B" class="col-12 rounded">
+                        <div id="1B-row" class="row">
+                            <div id="b" class="col-12">
+                                <!-- <div id="C-row" class="row d-flex p-2 justify-content-right">
+                                    <!--<div id="c" class='col-12 d-flex'>
+                                    <nav class="nav navbar-nav navbar-expand-lg ">
+                                        <a class="navbar-brand">COVID-19 MODEL</a>
+                                        <div class="btn-group justify-content-right">
+                                            <button class="btn btn-secondary btn-md dropdown-toggle ml" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                About
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                ...
+                                            </div>
+                                            <button class="btn btn-secondary btn-md dropdown-toggle ml" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Analysis
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                ...
+                                            </div>
+                                            <button class="btn btn-secondary btn-md dropdown-toggle ml" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Team
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                ...
+                                            </div>
+                                            <form class="form-inline">
+                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                    aria-label="Search">
+                                                <button class="btn btn-outline-secondary my-2 my-md-0"
+                                                    type="submit">Search</button>
+                                            </form>
+                                        </div>
+                                    </nav>
+                                    <!--</div> closing 'c' div un-needed
+                                </div> -->
+                                <!--C-row end-->
+                                <!---->
+                                <div id="D-row" class="row">
+                                    <div id="D-col-1" class="col-9">
+                                        <!-- <div id="D-row-1" class="row">
+                                            <div id="D-col-1a" class="col-12 justify-content-center my-auto rounded mb-0">
+                                                <div id='pleth' class='rounded mb-0'></div>
+                                            </div>
+                                        </div> -->
+                                        <div id="D-row-2" class="rounded mb-0">
+                                            <div id="article_and_data">
+                                                <h2>Coronavirus: America’s Health Peril</h2>
+                                                <br>
+                                                <div id='left text'>
+                                                    <p>There has been pandemic’s and there is corona virus!
+                                                        When the debacle about this deadly virus started from Wuhan,
+                                                        China, few would have predicted the anomaly it continues to
+                                                        cause. It is spreading like wildfire, difficult to mitigate,
+                                                        unable to live with. What a dick!</p>
+
+                                                    <div id='pleth' class='graph rounded mb-0'></div>
+                                                    <br><br><br><br><br>
+
+                                                    <p>
+                                                        Hardly has there been a year when holidays have been as
+                                                        solemn as it
+                                                        has been for the majority of 2020. Other than the solemnity,
+                                                        the
+                                                        loss of loved ones to the virus has caused lasting pains to
+                                                        families
+                                                        and loved ones. There is a public outcry and discomfort
+                                                        daily from
+                                                        every nook and corner about this unwanted enemy, and even
+                                                        the
+                                                        approval of a supposed vaccine to cure the virus has not
+                                                        brighten
+                                                        the mundane atmosphere</p>
+                                                </div>
+
+
+                                                <!-- End of Covid Map Section -->
+
+                                                <br>
+
+                                                <!-- Section for Bar Graph -->
+                                                <h3>Current State of Coronavirus</h3>
+
+                                                <br>
+
+                                                <!-- Bar Chart Section -->
+
+                                                <p>
+                                                    With the current health climate looking static, there is
+                                                    dire need
+                                                    to look into what is to come, and the impending dangers that
+                                                    awaits
+                                                    the human race. Importantly, the spread of this virus from
+                                                    rural to
+                                                    urban settings, densely and overly populated
+                                                    habitats.</p>
+
+                                                <p>To paint a more comprehensive picture of the geographic analysis, and
+                                                    how Coronavirus spread throughout the United States, we can also
+                                                    analyze the impact covid has had on each individual state. By
+                                                    comparing the state cases and death totals to their population, per
+                                                    100,000, some surprising images emerge.</p>
+
+                                                <br>
+
+                                                <!-- Beginning of Tableau Covid Data bar charts -->
+                                                <div class='tableauPlaceholder' id='viz1607830193039'
+                                                    style='width: 800px; height: 1200px'><noscript><a href='#'><img
+                                                                alt=' '
+                                                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;Covid-19PerState&#47;1_rss.png'
+                                                                style='border: none' /></a></noscript><object
+                                                        class='tableauViz' style='display:none;'>
+                                                        <param name='host_url'
+                                                            value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                        <param name='embed_code_version' value='3' />
+                                                        <param name='site_root' value='' />
+                                                        <param name='name'
+                                                            value='Covid-19MentalHealth&#47;Covid-19PerState' />
+                                                        <param name='tabs' value='no' />
+                                                        <param name='toolbar' value='yes' />
+                                                        <param name='static_image'
+                                                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;Covid-19PerState&#47;1.png' />
+                                                        <param name='animate_transition' value='yes' />
+                                                        <param name='display_static_image' value='yes' />
+                                                        <param name='display_spinner' value='yes' />
+                                                        <param name='display_overlay' value='yes' />
+                                                        <param name='display_count' value='yes' />
+                                                        <param name='language' value='en' />
+                                                        <param name='filter' value='publish=yes' /></object></div>
+                                                <script type='text/javascript'>
+                                                    var divElement = document.getElementById('viz1607830193039');
+                                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                                    if (divElement.offsetWidth > 800) {
+                                                        vizElement.style.minWidth = '420px';
+                                                        vizElement.style.maxWidth = '650px';
+                                                        vizElement.style.width = '100%';
+                                                        vizElement.style.minHeight = '587px';
+                                                        vizElement.style.maxHeight = '887px';
+                                                        vizElement.style.height = (divElement.offsetWidth * 0.75) +
+                                                            'px';
+                                                    } else if (divElement.offsetWidth > 500) {
+                                                        vizElement.style.minWidth = '420px';
+                                                        vizElement.style.maxWidth = '650px';
+                                                        vizElement.style.width = '100%';
+                                                        vizElement.style.minHeight = '587px';
+                                                        vizElement.style.maxHeight = '887px';
+                                                        vizElement.style.height = (divElement.offsetWidth * 0.75) +
+                                                            'px';
+                                                    } else {
+                                                        vizElement.style.width = '100%';
+                                                        vizElement.style.height = '777px';
+                                                    }
+                                                    var scriptElement = document.createElement('script');
+                                                    scriptElement.src =
+                                                        'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                                </script>
+                                                <!-- End of Tableau Bar Chart -->
+                                                <br>
+                                                <!-- Bar Chart Analysis -->
+                                                <p>On the left, the case numbers of Covid-19 per 100,000 citizens shows
+                                                    that North and South Dakota, followed by Iowa have the highest
+                                                    totals per capita. The Dakota’s and many mid-west states fought
+                                                    stringently to remain open, and the regulations that were put in
+                                                    place were not as restrictive as states heavily impacted early in
+                                                    the pandemic. This coupled with low access to healthcare, due to the
+                                                    rural demographic, could be reasons for such the high levels of
+                                                    Covid-19 cases throughout those states.</p>
+
+                                                <p>The right-hand side of visualizes the deaths per 100,000. New Jersey,
+                                                    New York, and Massachusetts round out the highest rate of death by
+                                                    Covid-19 in the United States. These states were heavily impacted at
+                                                    the beginning of the pandemic. Additionally, these states have a
+                                                    high-density population in the New York/New Jersey and Boston
+                                                    Metropolitan areas. The high density, along with novel treatments of
+                                                    the disease early in the pandemic could all be likely reasons why
+                                                    the death rates were so high in these states. As we will see below,
+                                                    as the pandemic has continued medical experts have become much more
+                                                    efficient in treating the disease. </p>
+                                                <!-- End of Bar Chart Section -->
+
+                                                <br>
+                                                <!-- Beginning of Line Chart Section -->
+                                                <h3>Coronavirus's Progression in the United States</h3>
+                                                <p>Nationally the pandemic has some promise. As mentioned before,
+                                                    Covid-19 has impacted each of our lives, however the data does
+                                                    suggest things are getting moderately better. The graph below is
+                                                    visualizing how Covid-19 has impacted the nation over the duration
+                                                    of the pandemic.</p>
+
+                                                <br>
+                                                <h6>How Has Covid-19 Impacted Your State?</h6>
+                                                <!--Beginning of Tableau Line Chart by State -->
+                                                <div class='tableauPlaceholder' id='viz1607830244186'
+                                                    style='position: relative'><noscript><a href='#'><img alt=' '
+                                                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;Covid-19CasesandDeathsOverTimeState&#47;1_rss.png'
+                                                                style='border: none' /></a></noscript><object
+                                                        class='tableauViz' style='display:none;'>
+                                                        <param name='host_url'
+                                                            value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                        <param name='embed_code_version' value='3' />
+                                                        <param name='site_root' value='' />
+                                                        <param name='name'
+                                                            value='Covid-19MentalHealth&#47;Covid-19CasesandDeathsOverTimeState' />
+                                                        <param name='tabs' value='no' />
+                                                        <param name='toolbar' value='yes' />
+                                                        <param name='static_image'
+                                                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;Covid-19CasesandDeathsOverTimeState&#47;1.png' />
+                                                        <param name='animate_transition' value='yes' />
+                                                        <param name='display_static_image' value='yes' />
+                                                        <param name='display_spinner' value='yes' />
+                                                        <param name='display_overlay' value='yes' />
+                                                        <param name='display_count' value='yes' />
+                                                        <param name='language' value='en' /></object></div>
+                                                <script type='text/javascript'>
+                                                    var divElement = document.getElementById('viz1607830244186');
+                                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                                    vizElement.style.width = '100%';
+                                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                                    var scriptElement = document.createElement('script');
+                                                    scriptElement.src =
+                                                        'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                                </script>
+                                                <br>
+
+                                                <!-- Covid Progression Analysis -->
+                                                <p>Analysis shows that though people are continuing be taken ill by
+                                                    Covid-19, the national rate of death is diminishing. As mentioned
+                                                    before this is due in large part by our dedicated medical experts
+                                                    and technicians evolving their treatment and becoming more
+                                                    knowledgeable about this disease. To elaborate further, we can view
+                                                    the initial spike in late March early April 6.9% fatality rate.
+                                                    However, during the summer spike in cases peaking by the end of
+                                                    June, early July, we reach an inflection point. Here we see a much
+                                                    lower fatality rate of 1.4%. Finally, the third and largest surge in
+                                                    cases of Covid-19 in America, we see a steady drop in the fatality
+                                                    rate to 0.8%. Though it is important to note that at the time this
+                                                    analysis is written we are in the middle of the "holiday" covid
+                                                    surge, and this fatality rate is subject to fluctuate. Hopefully
+                                                    going far lower!</p><br><br>
+                                                <h3>COVID-19 MODEL</h3>
+                                                <br>
+                                                <!--------END NEW-->
+                                                <!-- End of Line Graph Section --><br><br>
+                                                <h2> The Affects of Coronavirus on Mental Health</h2><br>
+                                                <p>These predictions do not describe saner times. <a
+                                                        id="mental_health_america" class="link"
+                                                        href="https://mhanational.org/issues/state-mental-health-america#Key">
+                                                        Mental Health
+                                                        America
+                                                    </a> (MHA) posts 1.5 million
+                                                    individuals have participated in the mental health screening
+                                                    between
+                                                    January 2020 to
+                                                    September
+                                                    2020. Amongst those screened are co-workers and friends who
+                                                    display big
+                                                    grins at any
+                                                    instance to
+                                                    hide hidden battles.</p>
+                                                <p>According to the Center for Disease Control and
+                                                    Prevention(CDC),
+                                                    organizations want to keep
+                                                    the
+                                                    mental health of their workforce in check for;</p>
+                                                <ul>
+                                                    <li>Increased Job Performance</li>
+                                                    <li>Effective Communication Amongst Employees</li>
+                                                    <li>Improved Physical and Daily Functioning</li>
+                                                    <li>Engagement and Commitment to Work.</li>
+                                                </ul>
+                                                <p>Gingerly analyzing the role of organizations in regard to the
+                                                    mental
+                                                    health of their
+                                                    workforce; I
+                                                    ponder to what extent organizations can be held accountable
+                                                    for
+                                                    the
+                                                    mental health of their
+                                                    employees.</p>
+                                                <p>As humans, we despise anything that deteriorates the state of
+                                                    our
+                                                    well-being thereby
+                                                    affecting
+                                                    our mental health. Well-being differs amongst individuals
+                                                    and it
+                                                    ranges
+                                                    from health to
+                                                    happiness, prosperity, and welfare.</p>
+                                                <p>The pandemic is a disruptive agent in the lives of basically
+                                                    every
+                                                    inhabitant on this planet.
+                                                    Lives and jobs were lost, economies boomeranged, it struck
+                                                    leaving
+                                                    almost no positivity to
+                                                    talk
+                                                    about except for the capitalistic powerhouses. These are
+                                                    strong
+                                                    attributes to the surge of
+                                                    mental issues as reported by MHA, but will the demise of the
+                                                    pandemic
+                                                    cause an improvement
+                                                    in
+                                                    the well-being of the populace? Forecasting such a report
+                                                    will
+                                                    be a
+                                                    tedious one due to the
+                                                    ubiquitous nature of viruses and the unprecedented nature of
+                                                    the
+                                                    pandemic. Another challenge
+                                                    will be the disparity of occurrence amongst certain
+                                                    demographics.</p>
+
+
+                                                <p>Utilizing the April 23 - July 21 Mental Health Data from the
+                                                    CDC
+                                                    with
+                                                    indicators such as
+                                                    anxiety
+                                                    and depression, the trajectory of mental illness during the
+                                                    pandemic was
+                                                    analyzed below:</p>
+
+                                                <br>
+
+                                                <div class='tableauPlaceholder' id='viz1607823075110'
+                                                    style='position: relative'><noscript><a href='#'><img alt=' '
+                                                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;MentalHealthinAmerica&#47;1_rss.png'
+                                                                style='border: none' /></a></noscript><object
+                                                        class='tableauViz' style='display:none;'>
+                                                        <param name='host_url'
+                                                            value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                                        <param name='embed_code_version' value='3' />
+                                                        <param name='site_root' value='' />
+                                                        <param name='name'
+                                                            value='Covid-19MentalHealth&#47;MentalHealthinAmerica' />
+                                                        <param name='tabs' value='no' />
+                                                        <param name='toolbar' value='yes' />
+                                                        <param name='static_image'
+                                                            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Covid-19MentalHealth&#47;MentalHealthinAmerica&#47;1.png' />
+                                                        <param name='animate_transition' value='yes' />
+                                                        <param name='display_static_image' value='yes' />
+                                                        <param name='display_spinner' value='yes' />
+                                                        <param name='display_overlay' value='yes' />
+                                                        <param name='display_count' value='yes' />
+                                                        <param name='language' value='en' /></object></div>
+                                                <script type='text/javascript'>
+                                                    var divElement = document.getElementById('viz1607823075110');
+                                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                                    vizElement.style.width = '100%';
+                                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                                    var scriptElement = document.createElement('script');
+                                                    scriptElement.src =
+                                                        'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                                </script>
+
+                                                <br>
+
+                                                <p>The significant dips at certain periods in May and June show
+                                                    there might
+                                                    be a strong
+                                                    correlation
+                                                    between pandemic and mental health. The disbursal of the
+                                                    stimulus check
+                                                    to almost every
+                                                    household in the United States, the proposal of hydroxyl
+                                                    chloroquine,
+                                                    and the relief of a
+                                                    change
+                                                    of work pattern amongst others are factors that can be
+                                                    attributed to
+                                                    this dip.</p>
+                                                <p>The dip will only last for a short time though because the
+                                                    government
+                                                    will not empty its
+                                                    treasury
+                                                    to continuously give palliatives to the populace. Sooner or
+                                                    later,
+                                                    people will also have to
+                                                    go
+                                                    back to their work routine thereby providing short-term
+                                                    solutions.</p>
+                                                <p>Things may have opened back up and wearing a face-covering
+                                                    might
+                                                    have
+                                                    become the new norm,
+                                                    but
+                                                    there is still an unprecedented growing number of cases that
+                                                    suggests a
+                                                    likely increase in
+                                                    mental issues. The University of California at Berkeley also
+                                                    <a id="uc_berkely" class="link"
+                                                        href="https://escholarship.org/uc/item/80k5d5hw"> report
+                                                    </a> a
+                                                    mental health issues
+                                                    have
+                                                    soared amongst US graduates. These are potential candidates
+                                                    that
+                                                    organizations look forward
+                                                    to
+                                                    integrating into the workforce. The question then is what
+                                                    role
+                                                    can
+                                                    organizations play in the
+                                                    mental health and wellbeing of their employees as we move
+                                                    forward during
+                                                    this pandemic and
+                                                    after?</p>
+                                                <p>Organizations may attempt to tackle this problem through the
+                                                    provision of
+                                                    above-median earned
+                                                    salaries, offering a good working environment, retirement,
+                                                    and
+                                                    other
+                                                    benefits. However, all
+                                                    these do not guarantee strong mental health. In cases where
+                                                    an
+                                                    employee
+                                                    suffers from anxiety
+                                                    or
+                                                    depression that stem from activities beyond the workplace,
+                                                    how
+                                                    do
+                                                    organizations handle this?
+                                                    Are
+                                                    organizations supposed to also teach financial literacy
+                                                    which in
+                                                    the
+                                                    long run leads to
+                                                    prosperity? Would it be wise for employees to entrust their
+                                                    organizations with the task to
+                                                    provide happiness?</p>
+
+
+                                                <p>In this era of customer centrism, organizations seem to
+                                                    prioritize
+                                                    customer/client welfare
+                                                    before
+                                                    its employees, understandably so. However, the current
+                                                    climate
+                                                    has
+                                                    highlighted the need for
+                                                    synergy in both consumer satisfaction and employee wellness.
+                                                    Combating
+                                                    the effect of mental
+                                                    health in the workforce will vary by organization sizes but
+                                                    organizations that are ignorant
+                                                    or
+                                                    defiant to the mental health of its workforce would be doing
+                                                    so
+                                                    to their
+                                                    detriment. Some
+                                                    organizations have become more innovative and are
+                                                    introducing
+                                                    mental
+                                                    health programs to
+                                                    enable
+                                                    employees to become more adaptable. Methodologies and
+                                                    cultures
+                                                    that can
+                                                    foster interpersonal
+                                                    relationships beyond work amongst employees should be
+                                                    encouraged,
+                                                    zero-tolerance against
+                                                    narcissism and bullying, and open room policies where
+                                                    employees
+                                                    can
+                                                    voice their concerns
+                                                    should
+                                                    be readily available. Ultimately, my suggestion is that
+                                                    employees should
+                                                    prioritize their
+                                                    well-being and not be afraid to ask for help when needed. As
+                                                    Simon Sinek
+                                                    so eloquently put
+                                                    it
+                                                    "Followers want to be taken care of. Leaders want to take
+                                                    care
+                                                    of
+                                                    others. Be the leader you
+                                                    wish
+                                                    you had." Take initiative!</p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="D-col-2" class="col-3 w-25">
+                                        <div id="D-row-2a" class="row">
+                                            <div id="D-col-2a" class="col-12">
+                                                <div id='team'>
+                                                    <h3>Team</h3>
+                                                    <br>
+                                                    <img src="../static/images/image.png"
+                                                        alt="Temitayo David Olanbiwonnu" width="150" height="150">
+                                                    <br>
+                                                    <a href="https://www.linkedin.com/in/david-olanbiwonnu1692/"
+                                                        class="linkedin"><img style="float:right"
+                                                            src="../static/images/linkedin-logo.png" alt="David Linkin"
+                                                            width="25" height="25"></a>
+                                                    <br>
+
+                                                    <p>
+                                                        Temitayo David Olanbiwonnu is a
+                                                        recent MBA graduate and current past Student President of the
+                                                        Fairfax University of America. In his young professional
+                                                        journey,
+                                                        David has worked in sectors ranging from the muddy waters of
+                                                        entrepreneurship, higher education, pharmaceuticals, and local
+                                                        government. He is currently enrolled in a Data Visualization
+                                                        course
+                                                        at George Washington University in order to gain technical
+                                                        skills in
+                                                        coding, data visualization and machine learning. To become a
+                                                        successful business executive and global leader, he plans on
+                                                        combining these cutting-edge skills with his diverse
+                                                        professional
+                                                        experience and business acumen. As such, he aims to improve the
+                                                        value of education in West Africa working with a non-profit
+                                                        organization. David is a huge soccer enthusiast and enjoys
+                                                        networking.
+                                                    </p>
+                                                    <br>
+                                                    <img src="../static/images/jen_s.jpeg" alt="Jenn S" width="150"
+                                                        height="150">
+                                                    <br>
+                                                    <a href="https://www.linkedin.com/in/jenseidl/"
+                                                        class="linkedin"><img style="float : right"
+                                                            src="../static/images/linkedin-logo.png" alt="Jenn Linkin"
+                                                            width="25" height="25"></a>
+
+                                                    <br>
+                                                    <p>
+                                                        Within Jen Seidl's profile is over ten years of
+                                                        education, multidisciplinary management and team collaboration
+                                                        experience. A jack of all trades, she was responsible for
+                                                        delivering
+                                                        complex marketing information to diverse audiences in data
+                                                        visualizations, print, and social media. Upon every opportunity,
+                                                        she
+                                                        seeks to: serve both her team and their customer, to empower
+                                                        them
+                                                        with the agency of knowledge about the products, and to grow
+                                                        sales,
+                                                        services, and her capabilities.
+                                                    </p>
+                                                    <br>
+                                                    <img src="../static/images/kent_t.jpeg" alt="Kent L. Thomas"
+                                                        width="150" height="150">
+                                                    <br>
+                                                    <a href="https://www.linkedin.com/in/kent-thomas-msed-84922b18a/"
+                                                        class="linkedin"><img style="float:right"
+                                                            src="../static/images/linkedin-logo.png" alt="Kent Linkin"
+                                                            width="25" height="25"></a>
+                                                    <br>
+                                                    <p>
+                                                        Kent Thomas recently received his MSED in
+                                                        Educational Leadership from Shenandoah University. In his quest
+                                                        as a
+                                                        lifelong learner, he set forth to cultivate his technical skills
+                                                        in
+                                                        Data Science at George Washington University to position himself
+                                                        to
+                                                        tackle new frontiers in our 21st century digital landscape.
+                                                        During
+                                                        this time, he developed a passion for data driven solutions. He
+                                                        strives to help organizations make the best better through
+                                                        coding,
+                                                        data engineering, web design, and machine learning. Kent plans
+                                                        to
+                                                        leverage his social science and leadership experience, with his
+                                                        enthusiasm for data driven solutions to work with educational
+                                                        institutions, contractors, and NGO's to help drive these
+                                                        organizations missions further. His goal is to bring future
+                                                        prosperity to developing communities. Kent enjoys volunteering
+                                                        to
+                                                        improve rural
+                                                        America, teaching, and learning from others through thought
+                                                        provoking conversation.
+                                                    </p>
+
+                                                    <br>
+
+
+                                                    <img src="../static/images/cynthia_z.png" alt="Cynthia Zang"
+                                                        width='150' height="150">
+                                                    <br>
+                                                    <p>
+                                                        Cynthia Zang is a hard-working detailed driven individual. She
+                                                        is a
+                                                        skilled presenter and a positive team force. Her professionalism
+                                                        and
+                                                        enduring commitment to her projects is wonderful for any team.
+                                                    </p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Table -->
+                                    <div id="D-row-2b" class="row">
+                                        <div id="D-col-2b" class="col-12 justify-content-center d-flex">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Second piechart stacked 
+                                            <div id="D-row-2c" class="row">
+                                            <div id="D-col-2c" class="col-12 justify-content-center d-flex">
+                                                <div id="pieRanking">
+                                                    <p class="font-italic font-weight-light text-center text-muted">
+                                                        <br>PieChart</p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                            </div>
+                        </div>
+                        <!-- D-row End-->
+                        <!-- E- Row Begin-->
+                        <div id="E-row-a" class="row">
+                            <!-- <div class="col-1"></div> -->
+                            <div id="E-col-1"
+                                class="col-8 justify-content-left container-fluid full-width div font-weight-light text-left">
+
+                                <!-- <div class='col-4'></div> -->
+                            </div>
+                            <!-- end right side-->
+                            <!-- b end-->
+                        </div>
+                        <!-- 1B-row end-->
+                    </div>
+                    <!-- col-1B end-->
                 </div>
-                <div class="col-9">
-                    <h3>COVID 19 Predictive Outbreak Model</h3>
-                </div>
+
+                <!--row-1 end-->
             </div>
+            <!--jumbotron end-->
         </div>
+        <!-- container-fluid end-->
+    </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <div class="container">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"> COVID 19 Menu</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/nytimes/covid-19-data">Data</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-    </br>
-    <!-- End Navigation Bar -->
-    <div class="container">
-        <!-- Left Content Pannel -->
-        <div class="row">
-            <div class="col-8">
-                <div class="article_and_data">
-                    <h2>COVID Prediction Models</h2>
-
-                    <br>
-
-                    <!-- Covid Map Section -->
-                    <h3>Future prediction of Covid Outbreaks in America</h3>
-                    <!-- div id for the clorapleth "covid map" -->
-                    <div id="covid_map"></div>
-                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-                        est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
-                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-                        debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-                        non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                        voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-                    <!-- End of Covid Map Section -->
-
-                    <br>
-
-                    <!-- Section for Bar Graph -->
-                    <h3>Growth of COVID-19 in America</h3>
-                    <!-- line graph -->
-                    <div id="covid_bar_graph"></div>
-                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                        velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                        pariatur?</p>
-                    <!-- End of Line Graph Section -->
-
-                    <br>
-
-                    <!-- Linear Regression section -->
-                    <h3>Future Growth of Covid-19 in America per State</h3>
-                    <!-- linear regression plot -->
-                    <div id="covid_linear_regression_plot"></div>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                        dolorum fuga. </p>
-                    <!-- End of Linear Regression Section -->
-
-                    <br>
-
-                    <!-- Beginning of David's article about Covid-19's effect on Mental Health -->
-                    <div id="covid_bubble"></div>
-                    <h3> Covid-19's effect on American Mental Health</h3>
-                    <p>These predictions do not describe saner climes. <a id="mental_health_america" class="link"
-                            href="https://mhanational.org/issues/state-mental-health-america#Key"> Mental Health
-                            America
-                        </a> (MHA) posts 1.5 million
-                        individuals have participated in the mental health screening between January 2020 to
-                        September
-                        2020. Amongst those screened are co-workers and friends who display big grins at any
-                        instance to
-                        hide hidden battles.</p>
-                    <p>According to the Center for Disease Control and Prevention(CDC), organizations want to keep
-                        the
-                        mental health of their workforce in check for;</p>
-                    <ul>
-                        <li>Increased Job Performance</li>
-                        <li>Effective Communication Amongst Employees</li>
-                        <li>Improved Physical and Daily Functioning</li>
-                        <li>Engagement and Commitment to Work.</li>
-                    </ul>
-                    <p>Gingerly analyzing the role of organizations in regard to the mental health of their
-                        workforce; I
-                        ponder to what extent organizations can be held accountable for the mental health of their
-                        employees.</p>
-                    <p>As humans, we despise anything that deteriorates the state of our well-being thereby
-                        affecting
-                        our mental health. Well-being differs amongst individuals and it ranges from health to
-                        happiness, prosperity, and welfare.</p>
-                    <p>The pandemic is a disruptive agent in the lives of basically every inhabitant on this planet.
-                        Lives and jobs were lost, economies boomeranged, it struck leaving almost no positivity to
-                        talk
-                        about except for the capitalistic powerhouses. These are strong attributes to the surge of
-                        mental issues as reported by MHA, but will the demise of the pandemic cause an improvement
-                        in
-                        the well-being of the populace? Forecasting such a report will be a tedious one due to the
-                        ubiquitous nature of viruses and the unprecedented nature of the pandemic. Another challenge
-                        will be the disparity of occurrence amongst certain demographics.</p>
 
 
-                    <p>Utilizing the April 23 - July 21 Mental Health Data from the CDC with indicators such as
-                        anxiety
-                        and depression, the trajectory of mental illness during the pandemic was analyzed below:</p>
-                    <div id='line_chart'></div>
-                    <img src="../static/images/Picture1.png" alt="Covid_mental_health_line_chart" width="500"
-                        height="250">
-                    <p>The significant dips at certain periods in May and June show there might be a strong
-                        correlation
-                        between pandemic and mental health. The disbursal of the stimulus check to almost every
-                        household in the United States, the proposal of hydroxyl chloroquine, and the relief of a
-                        change
-                        of work pattern amongst others are factors that can be attributed to this dip.</p>
-                    <p>The dip will only last for a short time though because the government will not empty its
-                        treasury
-                        to continuously give palliatives to the populace. Sooner or later, people will also have to
-                        go
-                        back to their work routine thereby providing short-term solutions.</p>
-                    <p>Things may have opened back up and wearing a face-covering might have become the new norm,
-                        but
-                        there is still an unprecedented growing number of cases that suggests a likely increase in
-                        mental issues. The University of California at Berkeley also <a id="uc_berkely" class="link"
-                            href="https://escholarship.org/uc/item/80k5d5hw"> report </a> a mental health issues
-                        have
-                        soared amongst US graduates. These are potential candidates that organizations look forward
-                        to
-                        integrating into the workforce. The question then is what role can organizations play in the
-                        mental health and wellbeing of their employees as we move forward during this pandemic and
-                        after?</p>
-                    <p>Organizations may attempt to tackle this problem through the provision of above-median earned
-                        salaries, offering a good working environment, retirement, and other benefits. However, all
-                        these do not guarantee strong mental health. In cases where an employee suffers from anxiety
-                        or
-                        depression that stem from activities beyond the workplace, how do organizations handle this?
-                        Are
-                        organizations supposed to also teach financial literacy which in the long run leads to
-                        prosperity? Would it be wise for employees to entrust their organizations with the task to
-                        provide happiness?</p>
-
-
-                    <p>In this era of customer centrism, organizations seem to prioritize customer/client welfare
-                        before
-                        its employees, understandably so. However, the current climate has highlighted the need for
-                        synergy in both consumer satisfaction and employee wellness. Combating the effect of mental
-                        health in the workforce will vary by organization sizes but organizations that are ignorant
-                        or
-                        defiant to the mental health of its workforce would be doing so to their detriment. Some
-                        organizations have become more innovative and are introducing mental health programs to
-                        enable
-                        employees to become more adaptable. Methodologies and cultures that can foster interpersonal
-                        relationships beyond work amongst employees should be encouraged, zero-tolerance against
-                        narcissism and bullying, and open room policies where employees can voice their concerns
-                        should
-                        be readily available. Ultimately, my suggestion is that employees should prioritize their
-                        well-being and not be afraid to ask for help when needed. As Simon Sinek so eloquently put
-                        it
-                        "Followers want to be taken care of. Leaders want to take care of others. Be the leader you
-                        wish
-                        you had." Take initiative!</p>
-                </div>
-            </div>
-            <!-- Right Content Profile Pannel -->
-            <div class="col-4">
-                <ul class="profiles">
-                    <h4>Developers Profile</h4>
-                        <div id='team'>
-                            <img src="../static/images/jen_s.jpeg" alt="Jenn S" width="150" height="150">
-                        </div>
-                        <br>
-                        <a href="https://www.linkedin.com/in/jenseidl/" class="linkedin"><img style="float : right"
-                                src="../static/images/linkedin-logo.png" alt="Jenn Linkin" width="25" height="25"></a>
-                        <br>
-                        <p>
-                            <h5>Jenn S</h5>Within my profile is over ten years of multidisciplinary management and team
-                            collaboration
-                            experience. A jack of all trades, I was responsible for delivering complex marketing
-                            information to diverse audiences in data visualizations, print, and social media. Upon every
-                            opportunity, I seek to: serve both my team and their customer, to empower them with the
-                            agency of knowledge about our product, and to grow sales, services, and my capabilities.
-                        </p>
-                    <br>
-                    <li class="David">
-                        <div id="team">
-                            <img src="../static/images/image.png" alt="Temitayo David Olanbiwonnu" width="150"
-                                height="150">
-                        </div>
-                        <br>
-                        <a href="https://www.linkedin.com/in/david-olanbiwonnu1692/" class="linkedin"><img
-                                style="float:right" src="../static/images/linkedin-logo.png" alt="David Linkin"
-                                width="25" height="25"></a>
-                        <br>
-                        <p>
-                            <h5>Temitayo "David" Olanbiwonnu</h5>Temitayo David Olanbiwonnu is a recent MBA graduate and
-                            current past Student President of
-                            the Fairfax University of America. In his young professional journey, David has worked in
-                            sectors ranging from the muddy waters of entrepreneurship, higher education,
-                            pharmaceuticals,
-                            and local government. He is currently enrolled in a Data Science course at
-                            George Washington University in order to gain technical skills in coding, data
-                            warehousing, and machine learning. He plans on combining these cutting-edge skills with his
-                            diverse
-                            professional experience and business acumen to achieve his long-term goal of becoming a
-                            successful business executive and global leader. As such, he aims to improve the value
-                            of education in West Africa through a non-profit organization. David is a huge soccer
-                            enthusiast and enjoys networking
-                        </p>
-                    </li>
-                    <br>
-                    <li class="Kent">
-                        <div id='team'>
-                            <img src="../static/images/kent_t.jpeg" alt="Kent L. Thomas" width="150" height="150">
-                        </div>
-                        <br>
-                        <a href="https://www.linkedin.com/in/kent-thomas-msed-84922b18a/" class="linkedin"><img
-                                style="float:right" src="../static/images/linkedin-logo.png" alt="Kent Linkin"
-                                width="25" height="25"></a>
-                        <br>
-                        <p>
-                            <h5>Kent L. Thomas</h5>Kent Thomas is recently recieved his MSED in Educational Leadership
-                            from Shenandoah
-                            University. In his quest as a life long learner, he set forth to cultivate his technical
-                            skills in Data Science at George Washington University to position himself to tackle new
-                            frontiers in our 21st century digital landscape. He has developed a passion for data driven
-                            solutions to help organizations make the best better through coding, data engineering, web
-                            design,
-                            and machine learning. Kent plans to leverage his social science and leadership experience,
-                            with
-                            his enthusiasim for data driven solutions to work with educational organizations and NGO's
-                            to bring future prosperity to developing communitties. Kent enjoys volunteering to improve
-                            rural America, and teaching and learning from others through thought provoking conversation.
-                        </p>
-                    </li>
-                    <br>
-                    <li class="Cynthia">
-                        <div id='team'>
-                        <img src="../static/images/cynthia_z.png" alt="Cynthia Zang" width='150' height="150">
-                        </div>
-                        <p>
-                            <h5>Cynthia Zang</h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt
-                            ut
-                            labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam ultrices
-                            sagittis.
-                            Lobortis scelerisque fermentum dui faucibus in ornare quam. Et tortor at risus viverra
-                            adipiscing at in. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <footer>
         <div class=“footer”>Copyright &copy;Analysis of Mental Health Data from the CDC was carried out at the
             George
-            Washington Data Analytics Bootcamp by Olanbiwonnu Temitayo David, Cynthia Zhang, Jennifer S, & Kent L.
+            Washington Data Analytics Bootcamp by Olanbiwonnu Temitayo David, Cynthia Zhang, Jennifer Seidl, & Kent L.
             Thomas</div>
     </footer>
 
 
-    <!-- Leaflet Script -->
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <!-- D3 JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
-
-    <!-- Choropleth JavaScript  
-    <script type="text/javascript" src="../static/js/choropleth.js"></script>
-
-    <!-- API key 
-    <script type="text/javascript" src="../static/js/config.js"></script>-->
-
-    Our JavaScript
-    <script type="text/javascript" src="../static/js/logic.js"></script>
 </body>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script src="../static/js/pleth.js"></script>
 
 </html>
